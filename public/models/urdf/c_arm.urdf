@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="c_arm">
+  <link
+    name="c_arm_base">
+    <inertial>
+      <origin
+        xyz="-0.00262495391461589 0.223158914770541 -0.0884738877017089"
+        rpy="0 0 0" />
+      <mass
+        value="10.1483315413728" />
+      <inertia
+        ixx="0.25440486161763"
+        ixy="0.00458279021149977"
+        ixz="0.000251470572548779"
+        iyy="0.367109827243984"
+        iyz="-0.00270342848096133"
+        izz="0.391896512326271" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/models/c_arm/c_arm_base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/models/c_arm/c_arm_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="c_arm_column">
+    <inertial>
+      <origin
+        xyz="-0.23026897333286 0.000499999997039913 -8.97984306378625E-12"
+        rpy="0 0 0" />
+      <mass
+        value="1.11058742309905" />
+      <inertia
+        ixx="0.00254698186341852"
+        ixy="-6.38158643757658E-13"
+        ixz="-1.54105029623934E-12"
+        iyy="0.030901639374098"
+        iyz="9.91195042736367E-12"
+        izz="0.0309016399207247" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/models/c_arm/c_arm_column.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/models/c_arm/c_arm_column.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_height_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0.736 0"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="c_arm_base" />
+    <child
+      link="c_arm_column" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="c_arm_head_lower">
+    <inertial>
+      <origin
+        xyz="0.0458053444257202 0.000387570911668225 -0.0148262784373278"
+        rpy="0 0 0" />
+      <mass
+        value="0.354216317570645" />
+      <inertia
+        ixx="0.00200138882688257"
+        ixy="-2.99603382738293E-10"
+        ixz="7.84911836724893E-07"
+        iyy="0.00033964110296826"
+        iyz="2.1424772130189E-09"
+        izz="0.00201386919459046" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/models/c_arm/c_arm_head_lower.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/models/c_arm/c_arm_head_lower.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="column_to_head_lower_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="c_arm_column" />
+    <child
+      link="c_arm_head_lower" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="c_arm_ring_arm">
+    <inertial>
+      <origin
+        xyz="0.23031537345104 0.00735946092397154 0.179811577068218"
+        rpy="0 0 0" />
+      <mass
+        value="4.67445553737918" />
+      <inertia
+        ixx="0.105752664684392"
+        ixy="3.69014660662113E-05"
+        ixz="-0.0784238713691347"
+        iyy="0.179118380096356"
+        iyz="0.00014025316433888"
+        izz="0.0898936375952748" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/models/c_arm/c_arm_ring_arm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/models/c_arm/c_arm_ring_arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_tilt_joint"
+    type="continuous">
+    <origin
+      xyz="0.156249999999985 0.146999999999998 0"
+      rpy="-1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="c_arm_head" />
+    <child
+      link="c_arm_ring_arm" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="c_arm_ring_no_arm">
+    <inertial>
+      <origin
+        xyz="-0.0625726400120922 0.0595671697569515 0.0287872993245616"
+        rpy="0 0 0" />
+      <mass
+        value="38.7647174184138" />
+      <inertia
+        ixx="1.86806405905739"
+        ixy="0.000286773547178892"
+        ixz="1.61750351688327E-05"
+        iyy="1.53410949210425"
+        iyz="-0.0104582485248975"
+        izz="0.60616219690182" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/models/c_arm/c_arm_ring_no_arm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/models/c_arm/c_arm_ring_no_arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="c_ring_rotation_joint"
+    type="continuous">
+    <origin
+      xyz="0.980018718228282 0.0625000000000031 -0.0487065511473029"
+      rpy="-3.14159265358979 0 1.5707963267949" />
+    <parent
+      link="c_arm_ring_arm" />
+    <child
+      link="c_arm_ring_no_arm" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="c_arm_head">
+    <inertial>
+      <origin
+        xyz="0.22715301725004 -0.172172595364181 0.0324589840462908"
+        rpy="0 0 0" />
+      <mass
+        value="1.90771770159536" />
+      <inertia
+        ixx="0.0850887846825982"
+        ixy="-0.00067489140126463"
+        ixz="-8.39411172431013E-05"
+        iyy="0.0311672151909108"
+        iyz="0.00586952798220085"
+        izz="0.0739434090686039" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/models/c_arm/c_arm_head.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/models/c_arm/c_arm_head.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="head_lower_to_head_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="c_arm_head_lower" />
+    <child
+      link="c_arm_head" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

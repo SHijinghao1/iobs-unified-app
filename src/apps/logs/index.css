@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  background-color: #F5F5F7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* IOBS-themed scrollbar - 白蓝色淡雅风格 (强制覆盖) */
+::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, rgba(245, 250, 255, 0.6) 0%, transparent 100%) !important;
+  border-radius: 3px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(160, 200, 235, 0.65) !important;
+  border-radius: 3px !important;
+  border: 1px solid rgba(180, 210, 240, 0.5) !important;
+  box-shadow: 0 0 4px rgba(160, 200, 235, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 185, 225, 0.85) !important;
+  box-shadow: 0 0 8px rgba(140, 185, 225, 0.35) !important;
+  border-color: rgba(160, 200, 235, 0.7) !important;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent !important;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.5) 0%, transparent 100%) !important;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(140, 185, 225, 0.75) !important;
+  box-shadow: 0 0 6px rgba(140, 185, 225, 0.3) !important;
+  border-color: rgba(160, 200, 235, 0.5) !important;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 170, 215, 0.9) !important;
+  box-shadow: 0 0 10px rgba(120, 170, 215, 0.45) !important;
+  border-color: rgba(140, 185, 225, 0.7) !important;
+}
+
+/* ========== 超高优先级滚动条样式（终极方案）========== */
+html body::-webkit-scrollbar,
+html body *::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+
+html body::-webkit-scrollbar-track,
+html body *::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, rgba(245, 250, 255, 0.4) 0%, transparent 100%) !important;
+  border-radius: 3px !important;
+}
+
+html body::-webkit-scrollbar-thumb,
+html body *::-webkit-scrollbar-thumb {
+  background: rgba(160, 200, 235, 0.65) !important;
+  border-radius: 3px !important;
+  border: 1px solid rgba(180, 210, 240, 0.5) !important;
+  box-shadow: 0 0 6px rgba(160, 200, 235, 0.3) !important;
+}
+
+html body::-webkit-scrollbar-thumb:hover,
+html body *::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 185, 225, 0.85) !important;
+  box-shadow: 0 0 10px rgba(140, 185, 225, 0.45) !important;
+  border-color: rgba(160, 200, 235, 0.7) !important;
+}
+
+html body::-webkit-scrollbar-corner,
+html body *::-webkit-scrollbar-corner {
+  background: transparent !important;
+}

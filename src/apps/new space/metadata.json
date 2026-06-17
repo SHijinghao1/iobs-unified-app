@@ -1,0 +1,6 @@
+{
+  "name": "space",
+  "description": "A high-precision operating table control interface for modern medical facilities, featuring real-time status monitoring, device linkage tracking, and anti-collision protection.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
